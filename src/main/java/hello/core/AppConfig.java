@@ -18,15 +18,18 @@ public class AppConfig {
     //2.그러면 멤버 서비스impl에  메모리멤버 리포지토리 코드는 없지만 자동 주입된다.
     @Bean
     public MemberService memberService(){ //역할이 눈에 보임
-        return new MemberServiceImpl(new MemoryMemberRepository());
+        System.out.println("call AppConfig.memberService");
+        return new MemberServiceImpl(memberRepository());
     }
     @Bean
     public MemberRepository memberRepository(){ // 역할
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
     @Bean
     public OrderService orderService(){ // 역할
-        return new OrderServiceImpl(new MemoryMemberRepository(),discountPolicy() );
+        System.out.println("call AppConfig.orderService");
+        return new OrderServiceImpl(memberRepository(),discountPolicy() );
     }@Bean
     public DiscountPolicy discountPolicy(){//역할
         //return new FixDiscountPolicy();
