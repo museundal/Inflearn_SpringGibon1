@@ -43,11 +43,13 @@ public class ApplicationContextBasicFindTest {
     @DisplayName("빈 이름으로 조회가 X ")
     void findBeanByNameX(){
         //ac.getBean("zz", MemberService.class);  멤버 서비스(?) 에 없다.
-        MemberService xxx =  ac.getBean("zz", MemberService.class);
-        assertThrows(NoSuchBeanDefinitionException.class,
-                ()->ac.getBean("zz", MemberService.class));
+//        MemberService xxx =  ac.getBean("zz", MemberService.class);
+//        assertThrows(NoSuchBeanDefinitionException.class,
+//                ()->ac.getBean("zz", MemberService.class));
 
         //화살표 오른쪽에 있는 코드가 실행이 되면 왼쪽에 있는 예외가 터져야 한다는 뜻
+
+        assertThrows(NoSuchBeanDefinitionException.class,()->ac.getBean("zz",MemberService.class));
 
     }
 }

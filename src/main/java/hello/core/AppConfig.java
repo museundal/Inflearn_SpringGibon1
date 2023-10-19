@@ -30,6 +30,7 @@ public class AppConfig {
     public OrderService orderService(){ // 역할
         System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(),discountPolicy() );
+        //return null;
     }@Bean
     public DiscountPolicy discountPolicy(){//역할
         //return new FixDiscountPolicy();

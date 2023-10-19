@@ -31,10 +31,10 @@ public class OrderServiceTest {
         memberService.join(member);
 
         //주문생성
-        Order order = orderService.createOrder(memberId, "FactCheckAlbum", 16000);
+        Order order = orderService.createOrder(memberId, "FactCheckAlbum", 10000);
 
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
-        Assertions.assertThat(order.calculatePrice()).isEqualTo(15000);
+        Assertions.assertThat(order.calculatePrice()).isEqualTo(9000);
 
     }
 }
