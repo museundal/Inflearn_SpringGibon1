@@ -1,2 +1,3 @@
-# springG1
+# Inflearn_SpringGibon1
+
 스프링 핵심 원리 - 기본편 
